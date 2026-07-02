@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Flecha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- SVG Arrow pointing UP (0 degrees) -->
+        <svg id="arrow" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,5 90,45 65,45 65,95 35,95 35,45 10,45" fill="#111" />
+        </svg>
+        <p id="round-counter">Ronda: 0 / 10</p>
+    </div>
+
+    <!-- Modal for the final message -->
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <h1>Hidalgo puto palomooooo</h1>
+            <button id="restart-btn">Reiniciar Juego</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

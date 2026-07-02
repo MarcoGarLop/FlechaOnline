@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#arrow {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    transform-origin: center center;
+    transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+#arrow:hover {
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+}
+
+#round-counter {
+    margin-top: 60px;
+    font-size: 1.2rem;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Modal styling */
+#modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+    z-index: 10;
+}
+
+#modal:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    text-align: center;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#modal:not(.hidden) .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 50px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(90deg, #ff007f, #7f00ff, #00d4ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite alternate ease-in-out;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+#restart-btn {
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #111;
+    background: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+#restart-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+#restart-btn:active {
+    transform: translateY(0) scale(1);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    #arrow { width: 150px; height: 150px; }
+}

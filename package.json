@@ -1,0 +1,11 @@
+{
+  "name": "flecha-online",
+  "version": "1.0.0",
+  "description": "Juego de la flecha",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
