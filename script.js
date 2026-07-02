@@ -1,4 +1,4 @@
-const arrow = document.getElementById('arrow');
+const arrow = document.getElementById('arrow-btn');
 const roundCounter = document.getElementById('round-counter');
 const modal = document.getElementById('modal');
 const restartBtn = document.getElementById('restart-btn');
@@ -8,8 +8,7 @@ const maxRounds = 10;
 let currentRotation = 0;
 let isSpinning = false;
 
-arrow.addEventListener('pointerdown', (e) => {
-    e.preventDefault(); // Previene doble trigger en móviles
+arrow.addEventListener('click', () => {
     // Si ya está girando o llegamos al límite de rondas, ignorar clic
     if (isSpinning || currentRound >= maxRounds) return;
     
@@ -60,8 +59,7 @@ arrow.addEventListener('transitionend', () => {
     }
 });
 
-restartBtn.addEventListener('pointerdown', (e) => {
-    e.preventDefault();
+restartBtn.addEventListener('click', () => {
     // Reiniciar las variables
     currentRound = 0;
     roundCounter.innerText = `Ronda: 0 / ${maxRounds}`;
