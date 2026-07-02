@@ -28,6 +28,11 @@ body {
     filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
     transform-origin: center center;
     transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    /* Optimizaciones para móvil */
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 #arrow:hover {
